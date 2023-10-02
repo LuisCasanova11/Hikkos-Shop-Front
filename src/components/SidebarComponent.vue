@@ -39,7 +39,6 @@ aside {
 	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
 	border: 1px solid #464646;
-	;
 
 	width: calc(2rem + 28px);
 	overflow: hidden;
