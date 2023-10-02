@@ -8,11 +8,11 @@
 		<div class="menu">
 			<router-link to="/" class="button">
 				<font-awesome-icon class="material-icons" icon="tag" />
-				<Button class="material-icons" disabled severity="help" rounded outlined text label="Products" />
+				<Button class="material-icons" disabled text label="Products" />
 			</router-link>
-			<router-link to="/about" class="button">
+			<router-link to="/users" class="button">
 				<font-awesome-icon class="material-icons" icon="user" />
-				<Button class="material-icons" disabled severity="help" rounded outlined text label="Users" />
+				<Button class="material-icons" disabled text label="Users" />
 			</router-link>
 		</div>
 	</aside>
@@ -34,7 +34,7 @@ const ToggleMenu = () => {
 aside {
 	display: flex;
 	flex-direction: column;
-    /* Added bluf effect */ 
+	/* Added bluf effect */
 	background: linear-gradient(200deg, #8D99AE80, #59595950);
 	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
@@ -99,7 +99,7 @@ aside {
 		transition: opacity 0.3s ease-in-out;
 	}
 
-    /* Changed colors */ 
+	/* Changed colors */
 
 	h3 {
 		color: #FFFCF9;

@@ -1,10 +1,10 @@
 <template>
-    <DataTable :value="products" class="table" id="prodtable">
-        <Column field=item header="Item" style="width: 100px" />
+    <DataTable :value="users" class="table" id="usertable">
+        <Column field="user" header="User" style="width: 100px" />
         <Column field="name" header="Name" />
-        <Column field="category" header="Category" />
-        <Column field="stock" header="Stock" />
-        <Column field="price" header="Price" />
+        <Column field="birthday" header="Birthday" />
+        <Column field="email" header="Email" />
+        <Column field="phone" header="Phone" />
         <Column field="actions" header="Actions" style="width:120px">
             <template #body>
                 <Button icon="pi pi-pencil" severity class="mr-1" />
@@ -28,20 +28,20 @@ export default {
     },
     data() {
         return {
-            products: [
+            users: [
                 {
-                    item: 'assets/perfil.png',
-                    name: 'Product 1',
-                    category: 'Drinks',
-                    stock: 15,
-                    price: '$199.99',
+                    user: 'assets/perfil.png',
+                    name: 'User 1',
+                    birthday: '01/02/03',
+                    email: 'email@example.com',
+                    phone: '4556722',
                 },
                 {
-                    item: 'assets/soda.png',
-                    name: 'Product 2',
-                    category: 'Drinks',
-                    stock: 50,
-                    price: '$49.99',
+                    user: 'assets/soda.png',
+                    name: 'User 2',
+                    birthday: '02/03/04',
+                    email: 'email@example.com',
+                    phone: '3211234',
                 },
             ],
         };
