@@ -3,24 +3,16 @@
 		<br>
 		<H3>Menu</H3>
 		<div class="menu-toggle-wrap button">
-			<font-awesome-icon class="menu-toggle" @click="ToggleMenu" icon="angles-right" style="color: #ffffff;" />
+			<font-awesome-icon class="menu-toggle" @click="ToggleMenu" icon="angles-right" style="color: #FFFCF9;" />
 		</div>
 		<div class="menu">
-			<router-link to="/" class="button" >
-				<font-awesome-icon class="material-icons" icon="tag" style="color: #595959;" />
-							<Button class="material-icons" 
-							disabled 
-							severity="help" 
-							rounded outlined text 
-							label="Products"/>
+			<router-link to="/" class="button">
+				<font-awesome-icon class="material-icons" icon="tag" />
+				<Button class="material-icons" disabled severity="help" rounded outlined text label="Products" />
 			</router-link>
 			<router-link to="/about" class="button">
-				<font-awesome-icon class="material-icons" icon="user" style="color: #595959;"/>
-				<Button class="material-icons" 
-							disabled 
-							severity="help" 
-							rounded outlined text 
-							label="Users"/>
+				<font-awesome-icon class="material-icons" icon="user" />
+				<Button class="material-icons" disabled severity="help" rounded outlined text label="Users" />
 			</router-link>
 		</div>
 	</aside>
@@ -43,12 +35,15 @@ aside {
 	display: flex;
 	flex-direction: column;
 
-    background: linear-gradient(200deg, #8D99AE 0%, #595959 100%);
+	background: linear-gradient(200deg, #8D99AE80, #59595950);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid #464646;
+	;
 
-
-	width: calc(2rem + 32px);
+	width: calc(2rem + 28px);
 	overflow: hidden;
-	min-height: 100vh;
+	height: 100vh;
 	padding: 1rem;
 
 	transition: 0.2s ease-in-out;
@@ -78,8 +73,8 @@ aside {
 			transition: 0.2s ease-in-out;
 
 			.material-icons {
-				font-size: 2rem;
-				color: var(--light);
+				font-size: 1rem;
+				color: FFFCF9;
 				transition: 0.2s ease-out;
 			}
 
@@ -93,7 +88,7 @@ aside {
 	}
 
 	h3,
-	.button{
+	.button {
 		font-size: 2rem;
 	}
 
@@ -106,7 +101,7 @@ aside {
 	}
 
 	h3 {
-		color: #ffffff;
+		color: #FFFCF9;
 		font-size: 0.875rem;
 		margin-bottom: 0.5rem;
 		text-transform: uppercase;
@@ -130,7 +125,7 @@ aside {
 			}
 
 			.text {
-				color: var(--light);
+				color: #FFFCF9;
 				transition: 0.2s ease-in-out;
 			}
 
@@ -139,7 +134,7 @@ aside {
 
 				.material-icons,
 				.text {
-					color: var(--primary);
+					color: #FFFCF9;
 				}
 			}
 
@@ -149,7 +144,7 @@ aside {
 
 				.material-icons,
 				.text {
-					color: var(--primary);
+					color: #FFFCF9;
 				}
 			}
 		}

@@ -10,7 +10,7 @@
     </header>
     <OverlayPanel ref="op">
         <div class="flex flex-wrap justify-content-between">
-            <div >
+            <div>
                 <font-awesome-icon icon="right-from-bracket" />
             </div>
             <div>
@@ -36,14 +36,24 @@ const toggle = (event) => {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    margin-bottom: 5px;
-    background: linear-gradient(45deg, #8D99AE 0%, #595959 100%);
-    color: #fff;
+    margin-bottom: 2px;
+
+    background: linear-gradient(45deg, #8D99AE80, #59595950);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid #464646;
+
+
+    ;
 }
 
 .left {
     display: flex;
     align-items: center;
+}
+
+.left img {
+    height: 30px;
 }
 
 .right {
@@ -52,10 +62,15 @@ const toggle = (event) => {
 }
 
 .right img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     margin-right: 10px;
+}
+
+.right span {
+    font-size: 12px;
+    color: #FFFCF9
 }
 
 .menu {

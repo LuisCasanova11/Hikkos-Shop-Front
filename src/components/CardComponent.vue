@@ -20,3 +20,10 @@
 import Card from 'primevue/card';
 import Button from 'primevue/button'
 </script>
+
+<style>
+/* .card {
+  width: 100vh;
+  height: 100vh;
+} */
+</style>

@@ -1,6 +1,6 @@
 <template>
     <DataTable :value="products" class="table">
-        <Column field="item" header="Item" style="width: 100px" />
+        <Column field=item header="Item" style="width: 100px" />
         <Column field="name" header="Name" />
         <Column field="category" header="Category" />
         <Column field="stock" header="Stock" />
@@ -23,14 +23,14 @@ export default {
         return {
             products: [
                 {
-                    item: '../assets/perfil.png',
+                    item: 'assets/perfil.png',
                     name: 'Product 1',
                     category: 'Drinks',
                     stock: 15,
                     price: '$199.99',
                 },
                 {
-                    item: '../assets/soda.png',
+                    item: 'assets/soda.png',
                     name: 'Product 2',
                     category: 'Drinks',
                     stock: 50,
@@ -48,7 +48,7 @@ export default {
 <style scoped>
 .table {
     min-height: 100%;
-	min-width: 100%;
+    min-width: 100%;
     max-width: 100%;
     max-height: 100%;
 }
