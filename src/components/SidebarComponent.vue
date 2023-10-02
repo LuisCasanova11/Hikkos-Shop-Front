@@ -34,7 +34,7 @@ const ToggleMenu = () => {
 aside {
 	display: flex;
 	flex-direction: column;
-
+    /* Added bluf effect */ 
 	background: linear-gradient(200deg, #8D99AE80, #59595950);
 	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
@@ -99,6 +99,8 @@ aside {
 		opacity: 0;
 		transition: opacity 0.3s ease-in-out;
 	}
+
+    /* Changed colors */ 
 
 	h3 {
 		color: #FFFCF9;

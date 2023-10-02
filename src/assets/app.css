@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+    /* Added custom font */ 
+
+
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
 
 *{

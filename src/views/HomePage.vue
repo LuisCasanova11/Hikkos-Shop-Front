@@ -67,6 +67,7 @@ const visible = ref(false);
 // const onUpload = () => {
 // 	toast.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000 })
 // }
+
 </script>
 <style scoped>
 .card-container {
