@@ -5,7 +5,12 @@
         <Column field="category" header="Category" />
         <Column field="stock" header="Stock" />
         <Column field="price" header="Price" />
-        <Column field="actions" header="Actions" style="width: 100px" />
+        <Column field="actions" header="Actions" style="width:120px">
+            <template #body>
+                <Button icon="pi pi-pencil" severity class="mr-1" />
+                <Button icon="pi pi-trash" severity="danger" class="mr-1" />
+            </template>
+        </Column>
     </DataTable>
 </template>
 
@@ -13,11 +18,13 @@
 
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
+import Button from 'primevue/button';
 
 export default {
     components: {
         DataTable,
         Column,
+        Button,
     },
     data() {
         return {
