@@ -12,12 +12,14 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { config } from "@fortawesome/fontawesome-svg-core";
+import ToastService from 'primevue/toastservice';
 
 config.styleDefault = "solid";
 const app = createApp(App);
 library.add(fas);
 app.component('font-awesome-icon', FontAwesomeIcon);
 app.use(vueAwesomeSidebar)
+app.use(ToastService);
 app.use(PrimeVue);
 app.use(router);
 app.mount('#app');

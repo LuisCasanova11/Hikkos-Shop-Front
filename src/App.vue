@@ -1,4 +1,6 @@
 <template>
+      <Toast />
+
   <div>
     <HeaderComponent />
   </div>
