@@ -1,29 +1,43 @@
 <template>
     <form @submit.prevent="submitForm">
         <Toast />
-        <label for="productName">Product Name:</label>
-        <input type="text" id="productName" v-model="product.productName" required>
+        <div class="formgrid grid">
+            <div class="field col-12 md:col-6 ">
+                <input type="text" id="image" v-model="product.image"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full px-5 py-6 border-round"
+                    placeholder="Image">
+                <input type="number" id="stock" v-model="product.stock" required
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full mt-2"
+                    placeholder="Stock">
+            </div>
+            <div class="field col-12 md:col-6">
+                <input type="text" id="productName" v-model="product.productName" required
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full py-3"
+                    placeholder="Product name">
+                <select id="categoryId" v-model="product.categoryId"
+                    class="w-full text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round outline-none focus:border-primary mt-2 py-3"
+                    placeholder="Category">
+                    <option value="1">Category 1</option>
+                    <option value="2">Category 2</option>
+                </select>
+                <input type="number" id="price" v-model="product.price" required
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full mt-2"
+                    placeholder="Price">
+            </div>
+            <div class="field col-12">
+                <textarea id="description" v-model="product.description" required
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                    placeholder="Description"></textarea>
+            </div>
+        </div>
+        <div class="flex">
+            <Button type="cancel" class="w-full mr-2 justify-content-center"
+                style="background-color: #183045;">Cancel</Button>
+            <Button type="submit" class="w-full ml-2 justify-content-center" style="background-color: #2A9D8F;">Add
+                Product</Button>
+        </div>
 
-        <label for="price">Price:</label>
-        <input type="number" id="price" v-model="product.price" required>
-
-        <label for="stock">Stock:</label>
-        <input type="number" id="stock" v-model="product.stock" required>
-
-        <label for="description">Description:</label>
-        <textarea id="description" v-model="product.description" required></textarea>
-
-        <label for="categoryId">Category:</label>
-        <select id="categoryId" v-model="product.categoryId">
-            <option value="1">Category 1</option>
-            <option value="2">Category 2</option>
-        </select>
-
-        <label for="image">Image URL:</label>
-        <input type="text" id="image" v-model="product.image">
-
-        <Button type="submit">Add Product</Button>
-        <Button @click="show()"></Button>
+        <!-- <Button @click="show()"></Button> -->
     </form>
 </template>
 <script>
