@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="flex">
-            <Button type="cancel" class="w-full mr-2 justify-content-center"
+            <Button @click="closeForm" type="cancel" class="w-full mr-2 justify-content-center"
                 style="background-color: #183045;">Cancel</Button>
             <Button type="submit" class="w-full ml-2 justify-content-center" style="background-color: #2A9D8F;">Add
                 Product</Button>
@@ -87,6 +87,10 @@ export default {
                     console.error("Error al agregar el producto:", error);
                 });
         },
+
+        closeForm() {
+            this.$emit("close");
+        }
     },
 };
 </script>
