@@ -1,23 +1,31 @@
 <template>
     <form @submit.prevent="submitForm">
-        <Toast />
-        <label for="productName">Product Name:</label>
-        <input type="text" id="productName" v-model="product.productName" required>
-        <label for="price">Price:</label>
-        <input type="number" id="price" v-model="product.price" required>
-        <label for="stock">Stock:</label>
-        <input type="number" id="stock" v-model="product.stock" required>
-        <label for="description">Description:</label>
-        <textarea id="description" v-model="product.description" required></textarea>
-        <label for="categoryId">Category:</label>
-        <select id="categoryId" v-model="product.categoryId">
-            <option value="1">Category 1</option>
-            <option value="2">Category 2</option>
-        </select>
-        <label for="image">Image URL:</label>
-        <input type="text" id="image" v-model="product.image">
-        <Button type="submit">Add Product</Button>
-        <Button @click="showSuccess">Show Toast</Button>
+        <div class="grid nested-grid">
+            <div class="col-4">
+                <input type="text" id="image" v-model="product.image" placeholder="Select image"
+                    class="w-full h-full p-3 font-bold border-round-sm">
+            </div>
+            <div class="col-8">
+                <div class="grid">
+                    <div class="col-6">
+                        <input type="text" id="productName" v-model="product.productName" required
+                            placeholder="Product name" class="w-full p-3 font-bold text-center border-round-sm">
+                    </div>
+                    <div class="col-12">
+                            <select id="categoryId" v-model="product.categoryId" aria-placeholder="Select a category" class="p-3 font-bold text-center border-round-sm">
+                                <option value="1">Category 1</option>
+                                <option value="2">Category 2</option>
+                            </select>
+                    </div>
+                </div>
+            </div>
+            <input type="number" id="price" v-model="product.price" required placeholder="Price">
+            <input type="number" id="stock" v-model="product.stock" required placeholder="Stock">
+            <textarea id="description" v-model="product.description" required placeholder="Description"></textarea>
+            <Button type="submit">Add Product</Button>
+            <Button @click="showSuccess">Show Toast</Button>
+
+        </div>
     </form>
 </template>
 
