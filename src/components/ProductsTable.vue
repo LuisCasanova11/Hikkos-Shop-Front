@@ -31,8 +31,8 @@
                     <select id="categoryId" v-model=editedProduct.categoryId
                         class="w-full p-2 py-3 mt-2 text-base border-solid outline-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
                         placeholder="Category">
-                        <option value="1">Category 1</option>
-                        <option value="2">Category 2</option>
+                        <option v-bind:key="categorie.id" v-for="categorie in categories" :value="categorie.id">
+                            {{ categorie.categoryName }}</option>
                     </select>
                     <input type="number" id="price" v-model=editedProduct.price
                         class="w-full p-2 mt-2 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
@@ -109,10 +109,19 @@ export default {
                 categoryId: "",
                 status: true,
             },
+            categories: [
+                {
+                    "id": 0,
+                    "categoryName": "",
+                    "status": true
+                },
+
+            ],
         };
     },
     created() {
         this.getProducts();
+        this.getCategories();
     },
     methods: {
         async getProducts() {
@@ -123,6 +132,17 @@ export default {
             } catch (error) {
                 console.error("Error al obtener los productos:", error);
             }
+        },
+        async getCategories() {
+            try {
+                const response = await axios.get("http://localhost:3000/api/categories");
+                this.categories = response.data.categories;
+                this.count = response.data.count;
+            } catch (error) {
+                console.error("Error al obtener los productos:", error);
+            }
+            console.log(this.categories)
+
         },
         async deleteProduct(id) {
             try {
