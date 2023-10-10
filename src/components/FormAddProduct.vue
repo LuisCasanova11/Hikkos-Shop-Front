@@ -14,11 +14,12 @@
                 <input type="text" id="productName" v-model="product.productName" required
                     class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full py-3"
                     placeholder="Product name">
-                <select id="categoryId" v-model="product.categoryId"
+                <select id="categoryId" v-model="selected_categorie"
                     class="w-full text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round outline-none focus:border-primary mt-2 py-3"
                     placeholder="Category">
-                    <option value="1">Category 1</option>
-                    <option value="2">Category 2</option>
+                    <option v-bind:key="categorie.id" v-for="categorie in categories" :value="categorie.id">
+                        {{ categorie.categoryName }}</option>
+                    <!-- <option value="2">Category 2</option> -->
                 </select>
                 <input type="number" id="price" v-model="product.price" required
                     class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full mt-2"
@@ -69,17 +70,35 @@ export default {
                 stock: "",
                 description: "",
                 status: true,
-                categoryId: 1,
+                categoryId: null,
                 image: "",
-                // category: {
-                //     id: 1,
-                //     categoryName: "",
-                //     status: true
-                // }
             },
+            categories: [
+                {
+                    "id": 0,
+                    "categoryName": "",
+                    "status": true
+                },
+
+            ],
+            selected_categorie: null,
         };
     },
+    created() {
+        this.getCategories();
+    },
     methods: {
+        async getCategories() {
+            try {
+                const response = await axios.get("http://localhost:3000/api/categories");
+                this.categories = response.data.categories;
+                this.count = response.data.count;
+            } catch (error) {
+                console.error("Error al obtener los productos:", error);
+            }
+            console.log(this.categories)
+
+        },
         submitForm() {
             axios.post("http://localhost:3000/api/products", this.product)
                 .then((response) => {

@@ -7,8 +7,8 @@
         <Column field="price" header="Price" />
         <Column header="Actions" style="width:120px">
             <template #body="rowData">
-                <Button icon="pi pi-trash" class="mr-1 p-button-danger" @click="deleteProduct(rowData.data.id)" />
-                <Button icon="pi pi-pencil" class="mr-1 p-button-success" @click="editProduct(rowData.data.id)" />
+                <Button icon="pi pi-pencil" severity class="mr-1" @click="editProduct(rowData.data.id)" />
+                <Button icon="pi pi-trash" severity="danger" class="mr-1" @click="deleteProduct(rowData.data.id)" />
             </template>
         </Column>
     </DataTable>
