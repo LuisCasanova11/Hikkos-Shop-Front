@@ -71,6 +71,11 @@ export default {
                 status: true,
                 categoryId: 1,
                 image: "",
+                // category: {
+                //     id: 1,
+                //     categoryName: "",
+                //     status: true
+                // }
             },
         };
     },
