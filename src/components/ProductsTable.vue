@@ -7,7 +7,7 @@
         <Column field="price" header="Price" />
         <Column header="Actions" style="width:120px">
             <template #body="rowData">
-                <Button icon="pi pi-trash" class="mr-1 p-button-danger" @click="deleteProduct(rowData.data.id)" />
+                <Button icon="pi pi-trash" class="mr-1 p-button-danger" @click="showDeleteConfirmation(rowData.data.id)" />
                 <Button icon="pi pi-pencil" class="mr-1 p-button-success" @click="editProduct(rowData.data.id)" />
             </template>
         </Column>
@@ -29,6 +29,15 @@
             <Button type="submit" label="Save" />
         </form>
     </Dialog>
+    <Dialog v-model:visible="deleteConfirmationVisible" modal>
+        <div>
+            <p>¿Estás seguro de que deseas eliminar el producto {{ productToDeleteName }}?</p>
+        </div>
+        <div class="flex">
+            <Button class="w-full mr-2 justify-content-center" label="Cancelar" @click="cancelDelete" />
+            <Button class="w-full mr-2 justify-content-center" label="Confirmar" @click="confirmDelete" />
+        </div>
+    </Dialog>
 </template>
 
 <script>
@@ -46,6 +55,9 @@ export default {
     },
     data() {
         return {
+            deleteConfirmationVisible: false,
+            productToDeleteId: null,
+            productToDeleteName: "",
             products: [],
             count: 0,
             visible: false,
@@ -76,6 +88,22 @@ export default {
                 this.getProducts();
             } catch (error) {
                 console.error(`Error al eliminar el producto con ID ${id}:`, error);
+            }
+        },
+        showDeleteConfirmation(id, productName) {
+            this.productToDeleteId = id;
+            this.productToDeleteName = productName;
+            this.deleteConfirmationVisible = true;
+        },
+        cancelDelete() {
+            this.productToDeleteId = null;
+            this.deleteConfirmationVisible = false;
+        },
+        async confirmDelete() {
+            if (this.productToDeleteId) {
+                await this.deleteProduct(this.productToDeleteId);
+                this.productToDeleteId = null;
+                this.deleteConfirmationVisible = false;
             }
         },
         async editProduct(id) {

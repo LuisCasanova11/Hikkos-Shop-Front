@@ -34,7 +34,6 @@ const visible = ref(false);
 	margin: 10px;
 	min-height: 100%;
 	min-width: 75%;
-
 }
 
 .button-container {
