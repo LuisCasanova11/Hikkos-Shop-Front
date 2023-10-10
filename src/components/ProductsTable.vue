@@ -8,7 +8,8 @@
         <Column header="Actions" style="width:120px">
             <template #body="rowData">
                 <Button icon="pi pi-pencil" severity class="mr-1" @click="editProduct(rowData.data.id)" />
-                <Button icon="pi pi-trash" severity="danger" class="mr-1" @click="deleteProduct(rowData.data.id)" />
+                <Button icon="pi pi-trash" severity="danger" class="mr-1"
+                    @click="showDeleteConfirmation(rowData.data.id)" />
             </template>
         </Column>
     </DataTable>
@@ -66,11 +67,13 @@
     </Dialog>
     <Dialog v-model:visible="deleteConfirmationVisible" modal>
         <div>
-            <p>¿Estás seguro de que deseas eliminar el producto {{ productToDeleteName }}?</p>
+            <p>¿Estás seguro de que deseas eliminar el producto?</p><br>
         </div>
         <div class="flex">
-            <Button class="w-full mr-2 justify-content-center" label="Cancelar" @click="cancelDelete" />
-            <Button class="w-full mr-2 justify-content-center" label="Confirmar" @click="confirmDelete" />
+            <Button class="w-full mr-2 justify-content-center" style="background-color: #183045;" label="Cancelar"
+                @click="cancelDelete" />
+            <Button class="w-full ml-2 justify-content-center" style="background-color: #2A9D8F;" label="Confirmar"
+                @click="confirmDelete" />
         </div>
     </Dialog>
 </template>
