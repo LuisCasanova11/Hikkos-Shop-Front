@@ -1,5 +1,5 @@
 <template>
-    <DataTable :value="products" class="table" id="prodtable">
+    <DataTable :value="products" class="table" id="prodtable" paginator :rows="5">
         <Column field="id" header="Item" style="width: 100px" />
         <Column field="productName" header="Name" />
         <Column field="category.categoryName" header="Category" />
@@ -117,7 +117,7 @@ export default {
     methods: {
         async getProducts() {
             try {
-                const response = await axios.get("http://localhost:3000/api/products?limit=5&page=1");
+                const response = await axios.get("http://localhost:3000/api/products?limit=100&page=1");
                 this.products = response.data.products;
                 this.count = response.data.count;
             } catch (error) {
