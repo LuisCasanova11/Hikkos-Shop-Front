@@ -14,7 +14,7 @@
                 <input type="text" id="productName" v-model="product.productName" required
                     class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full py-3"
                     placeholder="Product name">
-                <select id="categoryId" v-model="selected_categorie"
+                <select id="categoryId" v-model="product.categoryId"
                     class="w-full text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round outline-none focus:border-primary mt-2 py-3"
                     placeholder="Category">
                     <option v-bind:key="categorie.id" v-for="categorie in categories" :value="categorie.id">
@@ -69,8 +69,7 @@ export default {
                 price: "",
                 stock: "",
                 description: "",
-                status: true,
-                categoryId: null,
+                categoryId: 0,
                 image: "",
             },
             categories: [
@@ -81,7 +80,6 @@ export default {
                 },
 
             ],
-            selected_categorie: null,
         };
     },
     created() {

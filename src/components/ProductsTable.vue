@@ -114,7 +114,7 @@ export default {
     methods: {
         async getProducts() {
             try {
-                const response = await axios.get("http://localhost:3000/api/products");
+                const response = await axios.get("http://localhost:3000/api/products?limit=5&page=1");
                 this.products = response.data.products;
                 this.count = response.data.count;
             } catch (error) {
