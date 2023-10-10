@@ -7,14 +7,49 @@
         <Column field="price" header="Price" />
         <Column header="Actions" style="width:120px">
             <template #body="rowData">
-                <Button icon="pi pi-trash" class="mr-1 p-button-danger" @click="showDeleteConfirmation(rowData.data.id)" />
+                <Button icon="pi pi-trash" class="mr-1 p-button-danger" @click="deleteProduct(rowData.data.id)" />
                 <Button icon="pi pi-pencil" class="mr-1 p-button-success" @click="editProduct(rowData.data.id)" />
             </template>
         </Column>
     </DataTable>
-    <Dialog v-model:visible="visible" modal>
+    <Dialog v-model:visible="visible" modal header="Edit a product" :style="{ width: '50vw' }">
         <form @submit.prevent="saveProductChanges">
-            <div>
+            <div class="grid formgrid">
+                <div class="field col-12 md:col-6">
+                    <input type="text" id="image" v-model=editedProduct.image
+                        class="w-full p-2 px-5 py-6 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
+                        placeholder="Image">
+                    <input type="number" id="stock" v-model=editedProduct.stock
+                        class="w-full p-2 mt-2 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
+                        placeholder="Stock">
+                </div>
+                <div class="field col-12 md:col-6">
+                    <input type="text" id="productName" v-model=editedProduct.productName
+                        class="w-full p-2 py-3 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
+                        placeholder="Product name">
+                    <select id="categoryId" v-model=editedProduct.categoryId
+                        class="w-full p-2 py-3 mt-2 text-base border-solid outline-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
+                        placeholder="Category">
+                        <option value="1">Category 1</option>
+                        <option value="2">Category 2</option>
+                    </select>
+                    <input type="number" id="price" v-model=editedProduct.price
+                        class="w-full p-2 mt-2 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
+                        placeholder="Price">
+                </div>
+                <div class="field col-12">
+                    <textarea id="description" v-model=editedProduct.description
+                        class="w-full p-2 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
+                        placeholder="Description"></textarea>
+                </div>
+            </div>
+            <div class="flex">
+                <Button @click="closeForm" type="cancel" class="w-full mr-2 justify-content-center"
+                    style="background-color: #183045;">Cancel</Button>
+                <Button type="submit" class="w-full ml-2 justify-content-center" style="background-color: #2A9D8F;">Confirm
+                    edit</Button>
+            </div>
+            <!-- <div>
                 <label for="productName">Name:</label>
                 <input type="text" id="productName" v-model="editedProduct.productName" />
             </div>
@@ -26,7 +61,7 @@
                 <label for="price">Price:</label>
                 <input type="number" id="price" v-model="editedProduct.price" />
             </div>
-            <Button type="submit" label="Save" />
+             -->
         </form>
     </Dialog>
     <Dialog v-model:visible="deleteConfirmationVisible" modal>
@@ -66,6 +101,10 @@ export default {
                 productName: "",
                 stock: 0,
                 price: 0,
+                image: "",
+                description: "",
+                categoryId: "",
+                status: true,
             },
         };
     },
@@ -132,6 +171,9 @@ export default {
                 console.error("Error al actualizar el producto:", error);
             }
         },
+        closeEdit() {
+            this.$emit("close");
+        }
     },
 };
 </script>
