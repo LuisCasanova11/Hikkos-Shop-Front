@@ -1,9 +1,13 @@
 <template>
-    <DataTable :value="products" class="table" id="prodtable" paginator :rows="5">
-        <Column field="id" header="Item" style="width: 100px" />
-        <Column field="productName" header="Name" />
+    <DataTable :value="products" class="table" id="prodtable" paginator :rows="5" removableSort>
+        <Column field="id" header="Item" style="width: 100px">
+            <template #body>
+                <img src="../assets/soda.png" alt="user profile" />
+            </template>
+        </Column>
+        <Column sortable field="productName" header="Name" />
         <Column field="category.categoryName" header="Category" />
-        <Column field="stock" header="Stock" />
+        <Column sortable field="stock" header="Stock" />
         <Column field="price" header="Price" />
         <Column header="Actions" style="width:120px">
             <template #body="rowData">
@@ -17,9 +21,10 @@
         <form @submit.prevent="saveProductChanges">
             <div class="grid formgrid">
                 <div class="field col-12 md:col-6">
-                    <input type="text" id="image" v-model=editedProduct.image
-                        class="w-full p-2 px-5 py-6 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
-                        placeholder="Image">
+                    <FileUpload id="image" mode="basic" accept="image/*" :maxFileSize="1000000"
+                        v-model="editedProduct.image"
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full px-5 py-6 border-round"
+                        placeholder="Image" />
                     <input type="number" id="stock" v-model=editedProduct.stock
                         class="w-full p-2 mt-2 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
                         placeholder="Stock">
@@ -84,12 +89,15 @@ import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 import Button from 'primevue/button';
 import Dialog from 'primevue/dialog';
+import FileUpload from 'primevue/fileupload';
+
 export default {
     components: {
         DataTable,
         Column,
         Button,
-        Dialog
+        Dialog,
+        FileUpload
     },
     data() {
         return {

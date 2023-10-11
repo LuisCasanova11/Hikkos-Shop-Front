@@ -1,6 +1,10 @@
 <template>
     <DataTable :value="users" class="table" id="usertable">
-        <Column field="user" header="User" style="width: 100px" />
+        <Column field="user" header="User" style="width: 100px">
+            <template #body>
+                <img src="../assets/perfil.png" alt="user profile" />
+            </template>
+        </Column>
         <Column field="name" header="Name" />
         <Column field="birthday" header="Birthday" />
         <Column field="email" header="Email" />
