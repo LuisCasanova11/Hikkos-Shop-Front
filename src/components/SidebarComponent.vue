@@ -14,6 +14,10 @@
 				<font-awesome-icon class="material-icons" icon="user" />
 				<Button class="material-icons" disabled text label="Users" />
 			</router-link>
+			<router-link to="/categories" class="button">
+				<font-awesome-icon class="material-icons" icon="filter" />
+				<Button class="material-icons" disabled text label="Categories" />
+			</router-link>
 		</div>
 	</aside>
 </template>
