@@ -1,14 +1,18 @@
 <template>
     <DataTable :value="users" class="table" id="usertable">
-        <Column field="user" header="User" style="width: 100px" />
+        <Column field="user" header="User" style="width: 100px">
+            <template #body>
+                <img src="../assets/perfil.png" alt="user profile" />
+            </template>
+        </Column>
         <Column field="name" header="Name" />
         <Column field="birthday" header="Birthday" />
         <Column field="email" header="Email" />
         <Column field="phone" header="Phone" />
         <Column field="actions" header="Actions" style="width:120px">
             <template #body>
-                <Button icon="pi pi-pencil" severity class="mr-1" />
-                <Button icon="pi pi-trash" severity="danger" class="mr-1" />
+                <Button icon="pi pi-pencil" style="background-color: #457b9d;" class="mr-1" />
+                <Button icon="pi pi-trash" style="background-color: #9a031e;" class="mr-1" />
             </template>
         </Column>
     </DataTable>

@@ -3,9 +3,9 @@
         <Toast />
         <div class="formgrid grid">
             <div class="field col-12 md:col-6 ">
-                <input type="text" id="image" v-model="product.image"
+                <FileUpload id="image" mode="basic" accept="image/*" :maxFileSize="1000000" v-model="product.image"
                     class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full px-5 py-6 border-round"
-                    placeholder="Image">
+                    placeholder="Image" />
                 <input type="number" id="stock" v-model="product.stock" required
                     class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full mt-2"
                     placeholder="Stock">
@@ -45,6 +45,8 @@
 import axios from "axios";
 import Button from 'primevue/button';
 import { useToast } from "primevue/usetoast";
+import FileUpload from 'primevue/fileupload';
+
 
 export default {
     setup() {
@@ -60,7 +62,8 @@ export default {
         }
     },
     components: {
-        Button
+        Button,
+        FileUpload,
     },
     data() {
         return {
