@@ -11,8 +11,9 @@
         <Column field="price" header="Price" />
         <Column header="Actions" style="width:120px">
             <template #body="rowData">
-                <Button icon="pi pi-pencil" severity class="mr-1" @click="editProduct(rowData.data.id)" />
-                <Button icon="pi pi-trash" severity="danger" class="mr-1"
+                <Button icon="pi pi-pencil" style="background-color: #457b9d;" class="mr-1"
+                    @click="editProduct(rowData.data.id)" />
+                <Button icon="pi pi-trash" style="background-color: #9a031e;" class="mr-1"
                     @click="showDeleteConfirmation(rowData.data.id)" />
             </template>
         </Column>
