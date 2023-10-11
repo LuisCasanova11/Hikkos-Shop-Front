@@ -15,7 +15,7 @@
 				<Button class="material-icons" disabled text label="Users" />
 			</router-link>
 			<router-link to="/categories" class="button">
-				<font-awesome-icon class="material-icons" icon="filter" />
+				<font-awesome-icon class="material-icons" icon="layer-group" />
 				<Button class="material-icons" disabled text label="Categories" />
 			</router-link>
 		</div>

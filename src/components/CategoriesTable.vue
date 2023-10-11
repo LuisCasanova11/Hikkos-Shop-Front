@@ -3,11 +3,11 @@
         <Column field="id" header="Id" style="width: 100px" />
         <Column field="categoryName" header="Category name" />
         <Column header="Actions" style="width:120px">
-            <template #body="rowData">
+            <!-- <template #body="rowData">
                 <Button icon="pi pi-pencil" severity class="mr-1" @click="editProduct(rowData.data.id)" />
                 <Button icon="pi pi-trash" severity="danger" class="mr-1"
                     @click="showDeleteConfirmation(rowData.data.id)" />
-            </template>
+            </template> -->
         </Column>
     </DataTable>
     <Dialog v-model:visible="deleteConfirmationVisible" modal>

@@ -6,17 +6,17 @@
                 <input type="text" id="categoryName" v-model="categorie.categoryName" required
                     class="w-full p-2 py-3 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
                     placeholder="Categorie name">
-                <select id="status" v-model="categorie.status"
+                <!-- <select id="status" v-model="categorie.status"
                     class="w-full p-2 py-3 mt-2 text-base border-solid outline-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
                     placeholder="Status">
-                </select>
+                </select> -->
             </div>
         </div>
         <div class="flex">
             <Button @click="closeForm" type="cancel" class="w-full mr-2 justify-content-center"
                 style="background-color: #183045;">Cancel</Button>
             <Button type="submit" class="w-full ml-2 justify-content-center" style="background-color: #2A9D8F;">Add
-                Categorie</Button>
+                Category</Button>
         </div>
 
     </form>
@@ -46,7 +46,6 @@ export default {
         return {
             categorie: {
                 categoryName: "",
-                status: true,
             }
         };
     },

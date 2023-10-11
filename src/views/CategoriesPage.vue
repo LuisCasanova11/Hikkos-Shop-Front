@@ -2,8 +2,9 @@
 	<div class="card-container">
 		<Card class="card">
 			<template #title>
-				<div class="flex flex-wrap gap-2 align-items-center">
-					<Button @click="visible = true" label="Add categorie" style="background: #2A9D8F;" />
+				<div class="flex flex-wrap gap-2 align-items-center justify-content-between">
+					<span class="text-xl font-bold text-900">Categories</span>
+					<Button @click="visible = true" label="Add category" style="background: #2A9D8F;" />
 				</div>
 			</template>
 			<template #content>
@@ -11,7 +12,7 @@
 			</template>
 		</Card>
 	</div>
-	<Dialog v-model:visible="visible" modal header="Create a new categorie" :style="{ width: '50vw' }">
+	<Dialog v-model:visible="visible" modal header="Create a new category" :style="{ width: '50vw' }">
 		<AddCategorie :visible="visible" @close="visible = false"></AddCategorie>
 	</Dialog>
 </template>
