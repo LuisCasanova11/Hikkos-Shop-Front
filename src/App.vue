@@ -1,5 +1,5 @@
 <template>
-      <Toast />
+  <Toast />
 
   <div>
     <HeaderComponent />
@@ -40,7 +40,8 @@ export default {
 }
 
 body {
-  background: var(--light);
+  background: #782816;
+  //  var(--light);
 }
 
 button {
@@ -55,7 +56,6 @@ button {
   display: flex;
 
   main {
-    flex: 1 1 0;
     padding: 2rem;
 
     @media (max-width: 1024px) {
