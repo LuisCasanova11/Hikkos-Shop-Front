@@ -29,14 +29,12 @@ export default {
   --dark: #1e293b;
   --dark-alt: #334155;
   --light: #1E1E1E;
-  --sidebar-width: 300px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Fira sans", sans-serif;
 }
 
 body {

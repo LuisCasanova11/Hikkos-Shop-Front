@@ -6,7 +6,7 @@
 			<font-awesome-icon class="menu-toggle" @click="ToggleMenu" icon="angles-right" style="color: #FFFCF9;" />
 		</div>
 		<div class="menu">
-			<router-link to="/" class="button">
+			<router-link to="/products" class="button">
 				<font-awesome-icon class="material-icons" icon="tag" />
 				<Button class="material-icons" disabled text label="Products" />
 			</router-link>

@@ -13,7 +13,7 @@
 		</Card>
 	</div>
 	<Dialog v-model:visible="visible" modal header="Create a new category" :style="{ width: '50vw' }">
-		<AddCategorie :visible="visible" @close="visible = false"></AddCategorie>
+		<AddCategory :visible="visible" @close="visible = false"></AddCategory>
 	</Dialog>
 </template>
 
@@ -21,7 +21,7 @@
 import Card from 'primevue/card';
 import Categories from '../components/CategoriesTable.vue';
 import Button from 'primevue/button';
-import AddCategorie from '../components/FormAddCategorie.vue';
+import AddCategory from '../components/FormAddCategory.vue';
 import Dialog from 'primevue/dialog';
 
 import { ref } from "vue";
