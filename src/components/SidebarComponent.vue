@@ -39,13 +39,14 @@ aside {
 	display: flex;
 	flex-direction: column;
 	/* Added bluf effect */
-	background: #B94429;
-
+	background: #F2D0B6;
+	box-shadow: 0px 4px 24px -1px #00000025;
 	width: calc(2rem + 27px);
 	overflow: hidden;
 	height: 90.9vh;
 	padding: 1rem;
 	transition: 0.2s ease-in-out;
+
 
 	.flex {
 		flex: 1 1 0%;

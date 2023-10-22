@@ -1,15 +1,16 @@
 <template>
-    <DataTable :value="users" class="table" id="usertable">
-        <Column field="user" header="User" style="width: 100px">
+    <DataTable :value="users" class="table" id="usertable" style="outline: none; ::selection{outline: none;}">
+        <Column field="user" header="User"
+            style="width: 100px; background-color: #D96836; border: none; ::selection{outline: none;}">
             <template #body>
                 <img src="../assets/perfil.png" alt="user profile" />
             </template>
         </Column>
-        <Column field="name" header="Name" />
-        <Column field="birthday" header="Birthday" />
-        <Column field="email" header="Email" />
-        <Column field="phone" header="Phone" />
-        <Column field="actions" header="Actions" style="width:120px">
+        <Column field="name" header="Name" style="width: 100px; background-color: #D96836; border: none; " />
+        <Column field="birthday" header="Birthday" style="width: 100px; background-color: #D96836; border: none;" />
+        <Column field="email" header="Email" style="width: 100px; background-color: #D96836; border: none; " />
+        <Column field="phone" header="Phone" style="width: 100px; background-color: #D96836; border: none; " />
+        <Column field="actions" header="Actions" style="width:120px; background-color: #D96836; border: none;">
             <template #body>
                 <Button icon="pi pi-pencil" style="background-color: #457b9d;" class="mr-1" />
                 <Button icon="pi pi-trash" style="background-color: #9a031e;" class="mr-1" />

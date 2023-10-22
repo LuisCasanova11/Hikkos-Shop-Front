@@ -2,7 +2,8 @@
   <Toast />
 
   <div>
-    <HeaderComponent />
+    <!-- <HeaderComponent /> -->
+    <NavBar />
   </div>
   <div class="app">
     <SidebarComponent />
@@ -11,12 +12,14 @@
 </template>
 
 <script>
-import HeaderComponent from './components/HeaderComponent.vue';
+// import HeaderComponent from './components/HeaderComponent.vue';
 import SidebarComponent from './components/SidebarComponent.vue';
+import NavBar from './components/NavBar.vue';
 export default {
   components: {
-    HeaderComponent,
+    // HeaderComponent,
     SidebarComponent,
+    NavBar,
   }
 }
 </script>
@@ -38,7 +41,7 @@ export default {
 }
 
 body {
-  background: #782816;
+  background: #E08757;
   //  var(--light);
 }
 
