@@ -6,7 +6,7 @@
 			<font-awesome-icon class="menu-toggle" @click="ToggleMenu" icon="angles-right" style="color: #FFFCF9;" />
 		</div>
 		<div class="menu">
-			<router-link to="/" class="button">
+			<router-link to="/products" class="button">
 				<font-awesome-icon class="material-icons" icon="tag" />
 				<Button class="material-icons" disabled text label="Products" />
 			</router-link>
@@ -39,17 +39,14 @@ aside {
 	display: flex;
 	flex-direction: column;
 	/* Added bluf effect */
-	background: linear-gradient(200deg, #8D99AE80, #59595950);
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
-	border: 1px solid #464646;
-
-	width: calc(2rem + 28px);
+	background: #F2D0B6;
+	box-shadow: 0px 4px 24px -1px #00000025;
+	width: calc(2rem + 27px);
 	overflow: hidden;
-	height: 100vh;
+	height: 90.9vh;
 	padding: 1rem;
-
 	transition: 0.2s ease-in-out;
+
 
 	.flex {
 		flex: 1 1 0%;
@@ -77,13 +74,12 @@ aside {
 
 			.material-icons {
 				font-size: 1rem;
-				color: FFFCF9;
 				transition: 0.2s ease-out;
 			}
 
 			&:hover {
 				.material-icons {
-					color: var(--primary);
+					color: #FFFCF9;
 					transform: translateX(0.5rem);
 				}
 			}
@@ -101,6 +97,7 @@ aside {
 	.button .text {
 		opacity: 0;
 		transition: opacity 0.3s ease-in-out;
+
 	}
 
 	/* Changed colors */
@@ -124,8 +121,8 @@ aside {
 			padding: 0.5rem 1rem;
 
 			.material-icons {
-				font-size: 2rem;
-				color: var(--light);
+				font-size: 28px;
+				color: #FFFCF9;
 				transition: 0.2s ease-in-out;
 			}
 
@@ -135,7 +132,8 @@ aside {
 			}
 
 			&:hover {
-				background-color: var(--dark-alt);
+				background-color: #B94429;
+				mix-blend-mode: soft-light;
 
 				.material-icons,
 				.text {
@@ -144,8 +142,12 @@ aside {
 			}
 
 			&.router-link-exact-active {
-				background-color: var(--dark-alt);
-				border-right: 5px solid var(--primary);
+				background-color: #B94429;
+				backdrop-filter: blur(5px);
+				-webkit-backdrop-filter: blur(5px);
+				mix-blend-mode: soft-light;
+				border-right: 5px solid #FFFCF9;
+				;
 
 				.material-icons,
 				.text {

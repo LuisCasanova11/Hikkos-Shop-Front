@@ -14,7 +14,7 @@
                 <font-awesome-icon icon="right-from-bracket" />
             </div>
             <div>
-                <span class="pl-1">Log out</span>
+                <span class="pl-1"><a href="/login">Log out</a></span>
             </div>
         </div>
     </OverlayPanel>
@@ -36,12 +36,11 @@ const toggle = (event) => {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    margin-bottom: 2px;
     /* Added bluf effect */ 
     background: linear-gradient(45deg, #8D99AE80, #59595950);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid #464646;
-
 
     ;
 }

@@ -29,6 +29,7 @@ import UsersTableVue from '../components/UsersTable.vue';
 .card {
 	min-height: 100%;
 	min-width: 100%;
-}
+	background-color: #D96836;
+};
 </style>
 
