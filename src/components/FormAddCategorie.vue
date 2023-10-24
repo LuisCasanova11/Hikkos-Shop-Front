@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="submitForm">
+    <form @submit.prevent="submitForm" class="form">
         <Toast />
         <div class="grid formgrid">
             <div class="field col-12 md:col-6">

@@ -11,7 +11,7 @@
 				<ProductsTableVue></ProductsTableVue>
 			</template>
 		</Card>
-		<Dialog v-model:visible="visible" modal header="Create a new product" :style="{ width: '50vw' }">
+		<Dialog class="dialog" v-model:visible="visible" modal header="Create a new product" :style="{ width: '50vw' }">
 			<FormAddProduct :visible="visible" @close="visible = false"></FormAddProduct>
 		</Dialog>
 	</div>
@@ -53,6 +53,10 @@ const visible = ref(false);
 
 .field {
 	border-radius: 10px;
+}
+
+.dialog {
+	background: #000;
 }
 </style>
 

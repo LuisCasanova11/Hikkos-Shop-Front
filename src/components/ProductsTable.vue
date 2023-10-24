@@ -24,7 +24,7 @@
                 <div class="field col-12 md:col-6">
                     <FileUpload id="image" mode="basic" accept="image/*" :maxFileSize="1000000"
                         v-model="editedProduct.image"
-                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full px-5 py-6 border-round"
+                        class="w-full p-2 px-5 py-6 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
                         placeholder="Image" />
                     <input type="number" id="stock" v-model=editedProduct.stock
                         class="w-full p-2 mt-2 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
@@ -135,7 +135,7 @@ export default {
     methods: {
         async getProducts() {
             try {
-                const response = await axios.get("http://localhost:3000/api/products?limit=100&page=1");
+                const response = await axios.get("https://fb51t1xn-3000.use.devtunnels.ms/api/products");
                 this.products = response.data.products;
                 this.count = response.data.count;
             } catch (error) {

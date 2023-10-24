@@ -1,5 +1,5 @@
 <template>
-	<aside :class="`${is_expanded ? 'is-expanded' : ''}`">
+	<aside :class="`${is_expanded ? 'is-expanded' : 'is-collapsed'}`">
 		<br>
 		<H3>Menu</H3>
 		<div class="menu-toggle-wrap button">
@@ -190,6 +190,8 @@ aside {
 		.footer {
 			opacity: 0;
 		}
+
+
 	}
 
 	@media (max-width: 1024px) {

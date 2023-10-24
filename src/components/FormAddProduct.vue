@@ -1,33 +1,33 @@
 <template>
-    <form @submit.prevent="submitForm">
+    <form @submit.prevent="submitForm" class="form">
         <Toast />
-        <div class="formgrid grid">
+        <div class="grid formgrid">
             <div class="field col-12 md:col-6 ">
                 <FileUpload id="image" mode="basic" accept="image/*" :maxFileSize="1000000" v-model="product.image"
-                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full px-5 py-6 border-round"
+                    class="w-full p-2 px-5 py-6 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
                     placeholder="Image" />
                 <input type="number" id="stock" v-model="product.stock" required
-                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full mt-2"
+                    class="w-full p-2 mt-2 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
                     placeholder="Stock">
             </div>
             <div class="field col-12 md:col-6">
                 <input type="text" id="productName" v-model="product.productName" required
-                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full py-3"
+                    class="w-full p-2 py-3 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
                     placeholder="Product name">
                 <select id="categoryId" v-model="product.categoryId"
-                    class="w-full text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round outline-none focus:border-primary mt-2 py-3"
+                    class="w-full p-2 py-3 mt-2 text-base border-solid outline-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
                     placeholder="Category">
                     <option v-bind:key="categorie.id" v-for="categorie in categories" :value="categorie.id">
                         {{ categorie.categoryName }}</option>
                     <!-- <option value="2">Category 2</option> -->
                 </select>
                 <input type="number" id="price" v-model="product.price" required
-                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full mt-2"
+                    class="w-full p-2 mt-2 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
                     placeholder="Price">
             </div>
             <div class="field col-12">
                 <textarea id="description" v-model="product.description" required
-                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                    class="w-full p-2 text-base border-solid outline-none appearance-none text-color surface-overlay border-1 surface-border border-round focus:border-primary"
                     placeholder="Description"></textarea>
             </div>
         </div>

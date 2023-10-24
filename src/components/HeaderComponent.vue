@@ -36,7 +36,6 @@ const toggle = (event) => {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    margin-bottom: 2px;
     /* Added bluf effect */ 
     background: linear-gradient(45deg, #8D99AE80, #59595950);
     backdrop-filter: blur(5px);
